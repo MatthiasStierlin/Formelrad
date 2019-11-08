@@ -23,7 +23,7 @@ public class Main extends Application {
 			Pane root = new Pane();
 
 			// Creating an image
-			Image image = new Image(getClass().getResourceAsStream("formulawheelElectornic.gif"));
+			Image image = new Image(getClass().getResourceAsStream("formulawheelElectronic.gif"));
 			ImageView imageView = new ImageView(image);
 			imageView.setX(10);
 			imageView.setY(10);
@@ -35,7 +35,7 @@ public class Main extends Application {
 			Label lbPower= new Label("Power:");
 			lbPower.relocate(10, 285);
 			lbPower.setFont(Font.font(15));
-			root.getChildren().add();
+			root.getChildren().add(lbPower);
 
 			TextField txPower = new TextField();
 			txPower.relocate(100, 285);
