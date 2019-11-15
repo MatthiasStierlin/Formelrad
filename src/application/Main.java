@@ -81,21 +81,20 @@ public class Main extends Application {
 				double power = 0.0;
 				double tension = 0.0;
 				double current = 0.0;
-				double resistence = 0.0;
-				if(txPower.getText().isEmpty()==false) {
+				double resistance = 0.0;
+				if(!txPower.getText().isEmpty()) {
 					power = Double.parseDouble(txPower.getText());
 				}
-				if(txVoltage.getText().isEmpty()==false) {
+				if(!txVoltage.getText().isEmpty()) {
 					tension = Double.parseDouble(txVoltage.getText());
 				}
-				if(txCurrent.getText().isEmpty()==false) {
+				if(!txCurrent.getText().isEmpty()) {
 					current = Double.parseDouble(txCurrent.getText());
 				}
-				if(txResistance.getText().isEmpty()==false) {
-					resistence = Double.parseDouble(txResistance.getText());
+				if(!txResistance.getText().isEmpty()) {
+					resistance = Double.parseDouble(txResistance.getText());
 				}
-				Calculator myCalculator = new Calculator(
-						power, tension, current, resistence);
+				Calculator myCalculator = new Calculator(power, tension, current, resistance);
 					
 				txPower.setText(Double.toString(myCalculator.getPower()));
 				txVoltage.setText(Double.toString(myCalculator.getVoltage()));
