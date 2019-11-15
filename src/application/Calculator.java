@@ -54,4 +54,8 @@ public class Calculator {
 	private double PFromRAndI() {
 		return resistance * Math.pow(current, 2);
 	}
+	
+	private double PFromUAndR() {
+		return Math.pow(voltage, 2) / resistance;
+	}
 }
