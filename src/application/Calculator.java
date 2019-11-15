@@ -44,7 +44,30 @@ public class Calculator {
 	}
 
 	public void calculate() {
-
+		if(power + voltage == 0) {
+			power = PFromRAndI();
+			voltage = UFromRAndI();
+		}
+		else if(power + current == 0) {
+			power = PFromUAndR();
+			current = IFromUAndR();
+		}
+		else if(power + resistance == 0) {
+			power = PFromUAndI();
+			resistance = RFromUAndI();
+		}
+		else if(voltage + current == 0) {
+			voltage = UFromPAndR();
+			current = IFromPAndR();
+		}
+		else if(voltage + resistance == 0) {
+			voltage = UFromPAndI();
+			resistance = RFromPAndI();
+		}
+		else if(current + resistance == 0) {
+			current = IFromPAndU();
+			resistance = RFromPAndU();
+		}
 	}
 
 	private double PFromUAndI() {return voltage * current;}
@@ -63,7 +86,7 @@ public class Calculator {
 
 	private double RFromPAndI() {return power / Math.pow(current, 2);}
 
-	private double RFromUAndP() {return Math.pow(voltage, 2) / power;}
+	private double RFromPAndU() {return Math.pow(voltage, 2) / power;}
 
 	private double IFromUAndR() {return voltage * resistance;}
 
