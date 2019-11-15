@@ -62,4 +62,6 @@ public class Calculator {
 	private double RFromUAndI() {return voltage / current;}
 
 	private double RFromPAndI() {return power / Math.pow(current, 2);}
+
+	private double RFromUAndP() {return Math.pow(voltage, 2) / power;}
 }
