@@ -68,4 +68,6 @@ public class Calculator {
 	private double IFromUAndR() {return voltage * resistance;}
 
 	private double IFromPAndU() {return power / voltage;}
+	
+	private double IFromPAndR() {return Math.sqrt(power / resistance);}
 }
