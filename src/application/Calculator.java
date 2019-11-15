@@ -61,4 +61,5 @@ public class Calculator {
 
 	private double UFromRAndI() {return resistance * current;}
 
+	private double UFromPAndI() {return power / current;}
 }
