@@ -6,10 +6,10 @@ package application;
  * @version 08.11.2019
  */
 public class Calculator {
-	private double power; //P
-	private double voltage; //U
-	private double current; //I
-	private double resistance; //R
+	private double power; //P Watt
+	private double voltage; //U Spannung
+	private double current; //I Stromstärke
+	private double resistance; //R Widerstand
 	
 	public Calculator(double power, double voltage, double current, double resistance) {
 		super();
@@ -45,5 +45,9 @@ public class Calculator {
 
 	public void calculate() {
 
+	}
+
+	private double PFromUAndI() {
+		return voltage * current;
 	}
 }
