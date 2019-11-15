@@ -62,4 +62,6 @@ public class Calculator {
 	private double UFromRAndI() {return resistance * current;}
 
 	private double UFromPAndI() {return power / current;}
+
+	private double UFromPAndR() {return Math.sqrt(power * resistance);}
 }
