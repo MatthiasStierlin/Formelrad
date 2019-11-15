@@ -8,7 +8,7 @@ package application;
 public class Calculator {
 	private double power; //P Watt
 	private double voltage; //U Spannung
-	private double current; //I Stromstärke
+	private double current; //I Stromstaerke
 	private double resistance; //R Widerstand
 	
 	public Calculator(double power, double voltage, double current, double resistance) {
@@ -58,4 +58,7 @@ public class Calculator {
 	private double PFromUAndR() {
 		return Math.pow(voltage, 2) / resistance;
 	}
+
+	private double UFromRAndI() {return resistance * current;}
+
 }
