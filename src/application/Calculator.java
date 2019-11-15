@@ -50,4 +50,8 @@ public class Calculator {
 	private double PFromUAndI() {
 		return voltage * current;
 	}
+
+	private double PFromRAndI() {
+		return resistance * Math.pow(current, 2);
+	}
 }
