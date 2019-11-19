@@ -10,6 +10,7 @@ public class Calculator {
 	private double voltage; //U Spannung
 	private double current; //I Stromstaerke
 	private double resistance; //R Widerstand
+	private boolean tooManyValues = false;
 	
 	public Calculator(double power, double voltage, double current, double resistance) {
 		super();
@@ -35,6 +36,10 @@ public class Calculator {
 		return resistance;
 	}
 
+	public boolean getTooManyValues() {
+		return tooManyValues;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [power=" + power +
@@ -44,6 +49,15 @@ public class Calculator {
 	}
 
 	public void calculate() {
+		int setVariablesCount = 0;
+		if(power != 0) setVariablesCount++;
+		if(voltage != 0) setVariablesCount++;
+		if(current != 0) setVariablesCount++;
+		if(resistance != 0) setVariablesCount++;
+		if(setVariablesCount > 2) {
+			tooManyValues = true;
+			return;
+		}
 		if(power + voltage == 0) {
 			power = PFromRAndI();
 			voltage = UFromRAndI();
