@@ -95,7 +95,15 @@ public class Main extends Application {
 					resistance = Double.parseDouble(txResistance.getText());
 				}
 				Calculator myCalculator = new Calculator(power, tension, current, resistance);
-					
+				myCalculator.calculate();
+				if(myCalculator.getTooManyValues()) {
+					txPower.setText("Bitte nur zwei Werte");
+					txVoltage.clear();
+					txCurrent.clear();
+					txResistance.clear();
+					return;
+				}
+
 				txPower.setText(Double.toString(myCalculator.getPower()));
 				txVoltage.setText(Double.toString(myCalculator.getVoltage()));
 				txCurrent.setText(Double.toString(myCalculator.getCurrent()));
