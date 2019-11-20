@@ -84,11 +84,20 @@ public class Calculator {
 		}
 	}
 
-	private double PFromUAndI() {return voltage * current;}
+	private double PFromUAndI() {
+		System.out.println("The power will be calculated from voltage(u) and current(i).");
+		return voltage * current;
+	}
 
-	private double PFromRAndI() {return resistance * Math.pow(current, 2);}
+	private double PFromRAndI() {
+		System.out.println("The wattage will be calculated from resistance(r) and current(i).");
+		return resistance * Math.pow(current, 2);
+	}
 	
-	private double PFromUAndR() {return Math.pow(voltage, 2) / resistance;}
+	private double PFromUAndR() {
+		System.out.println("The wattage will be calculated from the voltage(u) and the resistance(r).");
+		return Math.pow(voltage, 2) / resistance;
+	}
 
 	private double UFromRAndI() {return resistance * current;}
 
