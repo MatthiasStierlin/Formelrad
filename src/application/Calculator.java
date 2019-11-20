@@ -114,11 +114,20 @@ public class Calculator {
 		return Math.sqrt(power * resistance);
 	}
 
-	private double RFromUAndI() {return voltage / current;}
+	private double RFromUAndI() {
+		System.out.println("The resistance will be calculated from the voltage(u) and current(i).");
+		return voltage / current;
+	}
 
-	private double RFromPAndI() {return power / Math.pow(current, 2);}
+	private double RFromPAndI() {
+		System.out.println("The resistance will be calculated from the power(p) and current(i).");
+		return power / Math.pow(current, 2);
+	}
 
-	private double RFromPAndU() {return Math.pow(voltage, 2) / power;}
+	private double RFromPAndU() {
+		System.out.println("The resistance will be calculated from the power(p) and voltage(u).");
+		return Math.pow(voltage, 2) / power;
+	}
 
 	private double IFromUAndR() {return voltage * resistance;}
 
