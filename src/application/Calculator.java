@@ -129,9 +129,18 @@ public class Calculator {
 		return Math.pow(voltage, 2) / power;
 	}
 
-	private double IFromUAndR() {return voltage * resistance;}
+	private double IFromUAndR() {
+		System.out.println("The current will be calculated from the power(u) and voltage(r).");
+		return voltage * resistance;
+	}
 
-	private double IFromPAndU() {return power / voltage;}
+	private double IFromPAndU() {
+		System.out.println("The current will be calculated from the power(p) and voltage(u).");
+		return power / voltage;
+	}
 	
-	private double IFromPAndR() {return Math.sqrt(power / resistance);}
+	private double IFromPAndR() {
+		System.out.println("The current will be calculated from the power(p) and resistance(r).");
+		return Math.sqrt(power / resistance);
+	}
 }
