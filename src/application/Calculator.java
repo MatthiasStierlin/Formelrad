@@ -10,6 +10,7 @@ public class Calculator {
 	private double voltage; //U Spannung
 	private double current; //I Stromstaerke
 	private double resistance; //R Widerstand
+	private boolean tooManyValues = false;
 	
 	public Calculator(double power, double voltage, double current, double resistance) {
 		super();
@@ -35,6 +36,10 @@ public class Calculator {
 		return resistance;
 	}
 
+	public boolean getTooManyValues() {
+		return tooManyValues;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [power=" + power +
@@ -44,6 +49,15 @@ public class Calculator {
 	}
 
 	public void calculate() {
+		int setVariablesCount = 0;
+		if(power != 0) setVariablesCount++;
+		if(voltage != 0) setVariablesCount++;
+		if(current != 0) setVariablesCount++;
+		if(resistance != 0) setVariablesCount++;
+		if(setVariablesCount > 2) {
+			tooManyValues = true;
+			return;
+		}
 		if(power + voltage == 0) {
 			power = PFromRAndI();
 			voltage = UFromRAndI();
@@ -70,27 +84,63 @@ public class Calculator {
 		}
 	}
 
-	private double PFromUAndI() {return voltage * current;}
+	private double PFromUAndI() {
+		System.out.println("The power will be calculated from voltage(u) and current(i).");
+		return voltage * current;
+	}
 
-	private double PFromRAndI() {return resistance * Math.pow(current, 2);}
+	private double PFromRAndI() {
+		System.out.println("The wattage will be calculated from resistance(r) and current(i).");
+		return resistance * Math.pow(current, 2);
+	}
 	
-	private double PFromUAndR() {return Math.pow(voltage, 2) / resistance;}
+	private double PFromUAndR() {
+		System.out.println("The wattage will be calculated from the voltage(u) and resistance(r).");
+		return Math.pow(voltage, 2) / resistance;
+	}
 
-	private double UFromRAndI() {return resistance * current;}
+	private double UFromRAndI() {
+		System.out.println("The voltage will be calculated from the resistance(r) and current(i).");
+		return resistance * current;
+	}
 
-	private double UFromPAndI() {return power / current;}
+	private double UFromPAndI() {
+		System.out.println("The voltage will be calculated from the power(p) and current(i).");
+		return power / current;
+	}
 
-	private double UFromPAndR() {return Math.sqrt(power * resistance);}
+	private double UFromPAndR() {
+		System.out.println("The voltage will be calculated from the power(p) and resistance(r).");
+		return Math.sqrt(power * resistance);
+	}
 
-	private double RFromUAndI() {return voltage / current;}
+	private double RFromUAndI() {
+		System.out.println("The resistance will be calculated from the voltage(u) and current(i).");
+		return voltage / current;
+	}
 
-	private double RFromPAndI() {return power / Math.pow(current, 2);}
+	private double RFromPAndI() {
+		System.out.println("The resistance will be calculated from the power(p) and current(i).");
+		return power / Math.pow(current, 2);
+	}
 
-	private double RFromPAndU() {return Math.pow(voltage, 2) / power;}
+	private double RFromPAndU() {
+		System.out.println("The resistance will be calculated from the power(p) and voltage(u).");
+		return Math.pow(voltage, 2) / power;
+	}
 
-	private double IFromUAndR() {return voltage * resistance;}
+	private double IFromUAndR() {
+		System.out.println("The current will be calculated from the power(u) and voltage(r).");
+		return voltage * resistance;
+	}
 
-	private double IFromPAndU() {return power / voltage;}
+	private double IFromPAndU() {
+		System.out.println("The current will be calculated from the power(p) and voltage(u).");
+		return power / voltage;
+	}
 	
-	private double IFromPAndR() {return Math.sqrt(power / resistance);}
+	private double IFromPAndR() {
+		System.out.println("The current will be calculated from the power(p) and resistance(r).");
+		return Math.sqrt(power / resistance);
+	}
 }

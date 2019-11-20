@@ -82,20 +82,36 @@ public class Main extends Application {
 				double tension = 0.0;
 				double current = 0.0;
 				double resistance = 0.0;
-				if(!txPower.getText().isEmpty()) {
+				txPower.setStyle("-fx-text-inner-color: red;");
+				txVoltage.setStyle("-fx-text-inner-color: red;");
+				txCurrent.setStyle("-fx-text-inner-color: red;");
+				txResistance.setStyle("-fx-text-inner-color: red;");
+				if(!txPower.getText().trim().isEmpty()) {
 					power = Double.parseDouble(txPower.getText());
+					txPower.setStyle("-fx-text-inner-color: black;");
 				}
-				if(!txVoltage.getText().isEmpty()) {
+				if(!txVoltage.getText().trim().isEmpty()) {
 					tension = Double.parseDouble(txVoltage.getText());
+					txVoltage.setStyle("-fx-text-inner-color: black;");
 				}
-				if(!txCurrent.getText().isEmpty()) {
+				if(!txCurrent.getText().trim().isEmpty()) {
 					current = Double.parseDouble(txCurrent.getText());
+					txCurrent.setStyle("-fx-text-inner-color: black;");
 				}
-				if(!txResistance.getText().isEmpty()) {
+				if(!txResistance.getText().trim().isEmpty()) {
 					resistance = Double.parseDouble(txResistance.getText());
+					txResistance.setStyle("-fx-text-inner-color: black;");
 				}
 				Calculator myCalculator = new Calculator(power, tension, current, resistance);
-					
+				myCalculator.calculate();
+				if(myCalculator.getTooManyValues()) {
+					txPower.setText("Bitte nur zwei Werte");
+					txVoltage.clear();
+					txCurrent.clear();
+					txResistance.clear();
+					return;
+				}
+
 				txPower.setText(Double.toString(myCalculator.getPower()));
 				txVoltage.setText(Double.toString(myCalculator.getVoltage()));
 				txCurrent.setText(Double.toString(myCalculator.getCurrent()));
