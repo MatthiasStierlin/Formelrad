@@ -2,10 +2,11 @@
 
 Hi!
 This was a school project which helped us to master Git.
+
 ![Formulawheel](https://github.com/MatthiasStierlin/Formelrad/blob/master/src/application/formulawheelElectronic.gif)
 
 
-# Programmers
+# Developers
 
- **Carlo Schmid 
- Matthias Stierlin**
+ **Carlo Schmid**
+ **Matthias Stierlin**
