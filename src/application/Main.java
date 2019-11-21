@@ -131,6 +131,10 @@ public class Main extends Application {
                 txVoltage.setText("");
                 txCurrent.setText("");
                 txResistance.setText("");
+                txPower.setStyle("-fx-text-inner-color: black;");
+                txVoltage.setStyle("-fx-text-inner-color: black;");
+                txCurrent.setStyle("-fx-text-inner-color: black;");
+                txResistance.setStyle("-fx-text-inner-color: black;");
             });
 
 
