@@ -3,7 +3,7 @@ package application;
 /**
  * Calculates the formula wheel
  * @author Carlo Schmid, Matthias Stierlin
- * @version 08.11.2019
+ * @version 21.11.2019
  */
 public class Calculator {
 	private double power; //P Watt
